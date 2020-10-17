@@ -25,11 +25,10 @@ public class Esercizi {
 	 * @param pattern String - Pattern da ricercare
 	 * @param contatore int - Occorrenze già trovate 
 	 * @return int Contatore aggiornato */
-	static private int esercizio3 (String stringa, String pattern,int contatore) {
+	static private int esercizio3 (String stringa, final String pattern,int contatore) {
 		int i=stringa.indexOf(pattern); 
 		if (i>=0) {
-			contatore++;
-			if (stringa.length() >= pattern.length()) return esercizio3 (stringa.substring(i+1,stringa.length()), pattern, contatore);
+			if (stringa.length() >= pattern.length()) return esercizio3 (stringa.substring(i+1,stringa.length()), pattern, ++contatore);
 			}
 		return contatore;
 	}
@@ -38,8 +37,27 @@ public class Esercizi {
 	 * @param stringa String - Testo in cui effettuare la ricerca
 	 * @param pattern String - Pattern da ricercare
 	 * @return int - Numero delle occorrenze trovate */
-	static public int esercizio3 (String stringa, String pattern) {
+	static public int esercizio3 (String stringa, final String pattern) {
 		return esercizio3(stringa, pattern, 0);
 	}
 
+	/**Metodo per verificare la correttezza formale di un indirizzo email senza utlizzo di espressioni regolari
+	 * @param stringa String - Stringa da validare
+	 * @return boolean ritorna vero se la stringa ricevuta rappresenta un indirizzo email formalmente corretto */
+	static public boolean isValidEmail (String stringa) {
+		boolean valido=false;
+		String stringaDivisa[] = stringa.split("@");
+		String tld[] = {".com",".it",".edu", ".gov", ".fr", ".de", ".net"};
+		if ((stringaDivisa.length == 2) && (stringaDivisa[0].length() > 0) && (stringa.charAt(stringa.indexOf("@")+1) != '.')) {
+			String s[] = stringaDivisa[1].split("\\.");
+			if ((s.length > 1) && (!s[1].startsWith("\\.")));
+				for (String suffisso : tld) {
+					if (s[s.length - 1].length() >= (suffisso.length()-1)) {
+						if (!valido) valido = stringaDivisa[1].endsWith(suffisso)?true:false;
+						else break;
+					}
+				}
+		}
+		return valido;
+	}
 }
