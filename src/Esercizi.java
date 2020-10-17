@@ -60,4 +60,12 @@ public class Esercizi {
 		}
 		return valido;
 	}
+
+	/**Metodo per verificare la correttezza formale di un indirizzo email senza utlizzo di espressioni regolari
+	* @param stringa String - Stringa da validare
+	* @return boolean ritorna vero se la stringa ricevuta rappresenta un indirizzo email formalmente corretto */
+	static public boolean isValidEmailRegex (String stringa) {
+		return stringa.matches("\\w+@\\w+\\.(com|it|edu|gov|fr|de|net)");
+	}
+
 }
