@@ -20,7 +20,7 @@ public class Esercizi {
 	}
 
 
-	/**Metodo privato per passare il valore del contatore 
+	/**Metodo privato per passare il valore del contatore durante la ricerca del pattern 
 	 * @param stringa String - Testo in cui effettuare la ricerca
 	 * @param pattern String - Pattern da ricercare
 	 * @param contatore int - Occorrenze già trovate 
