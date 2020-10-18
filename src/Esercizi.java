@@ -68,4 +68,34 @@ public class Esercizi {
 		return stringa.matches("\\w+@\\w+\\.(com|it|edu|gov|fr|de|net)");
 	}
 
-}
+	/**Metodo che preso in input un intero restituisce la somma delle sue cifre 
+	 * @param numero int - numero di cui saranno sommate le singole cifre
+	 * @return int - somma delle cifre */
+	static public int sommaCifre(int numero) {
+		String stringa = String.valueOf(numero);
+		int somma=0;
+		for (int i=0;i<stringa.length();i++) somma+=Integer.parseInt(stringa.substring(i,i+1));
+		return somma;
+	}
+
+	/** Metodo che controlla se una stringa e l'anagramma di un'altra
+	 * @param stringa1 String Prima stringa da valutare
+	 * @param stringa2 String Seconda stringa da validare
+	 * @return boolean vero se string2 è anagramma di string1 altrimenri falso */
+	static public boolean isAnagram(String stringa1, String stringa2) {
+		if (stringa1.length() == stringa2.length()) {
+			ArrayList<Character> caratteriStringa1 = new ArrayList<Character>();
+			for (char carattere : stringa1.toCharArray()) caratteriStringa1.add(carattere);
+			for (char carattere2 : stringa2.toCharArray()) {
+				//System.out.println("DEBUG: carattere esaminato: " + carattere2);
+				caratteriStringa1.remove(Character.valueOf(carattere2));
+			}
+			//for (char carattere : caratteriStringa1) System.out.print(carattere);
+			//System.out.println("DEBUG: LUNGHEZZA RESIDUA: " + caratteriStringa1.size());
+			return caratteriStringa1.size()>0?false:true;
+		}
+		return false;
+	}
+	
+
+ }
