@@ -131,7 +131,14 @@ public class Esercizi {
 		return rapUnaria.toString();
 	}
 
-
-	
+	/**Metodo che trasforma in maiuscolo l'iniziale di ogni parola di una stringa fornita in ingresso
+	 * @param stringa String stringa da convertire
+	 * @return String stringa modificata */
+	public static String inizialeMaiuscolo (String stringa) {
+		StringBuilder stringasb = new StringBuilder();
+		String parole[]=stringa.split(" ");
+		for (String parola : parole) stringasb.append(parola.substring(0,1).toUpperCase() + parola.substring(1)+" ");
+		return stringasb.toString().trim();
+	}	
 
  }
