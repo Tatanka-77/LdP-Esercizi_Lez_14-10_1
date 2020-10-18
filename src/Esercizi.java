@@ -136,7 +136,7 @@ public class Esercizi {
 	 * @return String stringa modificata */
 	public static String inizialeMaiuscolo (String stringa) {
 		StringBuilder stringasb = new StringBuilder();
-		String parole[]=stringa.split(" ");
+		String[] parole=stringa.split(" ");
 		for (String parola : parole) stringasb.append(parola.substring(0,1).toUpperCase() + parola.substring(1)+" ");
 		return stringasb.toString().trim();
 	}	
@@ -144,7 +144,7 @@ public class Esercizi {
 	/**Metodo che genera le parola n-esima di Fibonacci con n fornito in input
 	 * @param n int indice della serie
 	 * @return String n-esimo termine della serie richiesto */
-	static ArrayList<String> pdf = new ArrayList<String>();
+	private static ArrayList<String> pdf = new ArrayList<String>();
 	public static String parolaDiFibonacci (int n) {
 		if (pdf.size() > 0 && pdf.get(n-1).length() > 0) return pdf.get(n-1);
 		else {
@@ -162,5 +162,22 @@ public class Esercizi {
 					return pdf.get(n-1);
 			}
 		}
+	}
+
+	/**Metodo che dati in input due interi a ed n restituisce una stringa casuale di n elementi presi da un alfabeto di cardinalità a
+	 * @param a int Cardinalità dell'alfabeto
+	 * @param n int Lunghezza della stringa generata
+	 * @return String stringa richiesta */
+	public static String stringaCasuale(int a, int n) {
+		char[] alfabeto = new char[a];
+		System.out.print("L'alfabeto di cardinalità "+ a + " dal quale sarà scelta la parola di lunghezza " + n + " è: ");  
+		for (int i=0; i<a; i++) {
+			alfabeto[i]=(char)(int)(21 + Math.random()*100);
+			System.out.print (alfabeto[i] + " " );
+		}
+		System.out.println("");
+		StringBuilder parola = new StringBuilder();
+		for (int i=0; i<n; i++) parola.append(Character.toString(alfabeto[(int)(Math.random()*n)]));
+		return(parola.toString());
 	}
 }
