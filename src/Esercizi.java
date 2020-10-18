@@ -122,6 +122,15 @@ public class Esercizi {
 		return caratteri.toString().replace("[","").replace("]","").replace(", ","");
 	}
 
+	/**Metodo che restituisce la rappresentazione unaria di un numero fornito in ingresso
+	 * @param numero int - numero da convertire
+	 * @return string - rappresentazione unaria del numero convertito */
+	static public String rappresentazioneUnaria (int numero) {
+		StringBuilder rapUnaria = new StringBuilder();
+		for (int i=0; i<numero; i++) rapUnaria.append("0");
+		return rapUnaria.toString();
+	}
+
 
 	
 
