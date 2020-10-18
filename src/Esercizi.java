@@ -140,5 +140,27 @@ public class Esercizi {
 		for (String parola : parole) stringasb.append(parola.substring(0,1).toUpperCase() + parola.substring(1)+" ");
 		return stringasb.toString().trim();
 	}	
-
- }
+	
+	/**Metodo che genera le parola n-esima di Fibonacci con n fornito in input
+	 * @param n int indice della serie
+	 * @return String n-esimo termine della serie richiesto */
+	static ArrayList<String> pdf = new ArrayList<String>();
+	public static String parolaDiFibonacci (int n) {
+		if (pdf.size() > 0 && pdf.get(n-1).length() > 0) return pdf.get(n-1);
+		else {
+			StringBuilder sb = new StringBuilder();
+			switch (n) {
+				case 1: 
+					pdf.add("B");
+					return ("B");
+				case 2: 
+					pdf.add("B");
+					pdf.add("A");
+					return ("A");
+				default: 
+					pdf.add(sb.append(parolaDiFibonacci(n-1)).append(parolaDiFibonacci(n-2)).toString());
+					return pdf.get(n-1);
+			}
+		}
+	}
+}
