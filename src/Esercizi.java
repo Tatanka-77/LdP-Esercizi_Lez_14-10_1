@@ -61,11 +61,11 @@ public class Esercizi {
 		return valido;
 	}
 
-	/**Metodo per verificare la correttezza formale di un indirizzo email senza utlizzo di espressioni regolari
+	/**Metodo per verificare la correttezza formale di un indirizzo email con l'utlizzo di espressioni regolari
 	* @param stringa String - Stringa da validare
 	* @return boolean ritorna vero se la stringa ricevuta rappresenta un indirizzo email formalmente corretto */
 	static public boolean isValidEmailRegex (String stringa) {
-		return stringa.matches("\\w+@\\w+\\.(com|it|edu|gov|fr|de|net)");
+		return stringa.matches("[\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}\\~]([\\.\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}~]?[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^_`\\{\\|\\}~]+)*@[\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}\\~]([\\.\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}~]?[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^_`\\{\\|\\}~]+)*.(com|it|edu|gov|fr|de|net)");
 	}
 
 	/**Metodo che preso in input un intero restituisce la somma delle sue cifre 
@@ -86,16 +86,43 @@ public class Esercizi {
 		if (stringa1.length() == stringa2.length()) {
 			ArrayList<Character> caratteriStringa1 = new ArrayList<Character>();
 			for (char carattere : stringa1.toCharArray()) caratteriStringa1.add(carattere);
-			for (char carattere2 : stringa2.toCharArray()) {
-				//System.out.println("DEBUG: carattere esaminato: " + carattere2);
-				caratteriStringa1.remove(Character.valueOf(carattere2));
-			}
-			//for (char carattere : caratteriStringa1) System.out.print(carattere);
-			//System.out.println("DEBUG: LUNGHEZZA RESIDUA: " + caratteriStringa1.size());
+			for (char carattere2 : stringa2.toCharArray()) caratteriStringa1.remove(Character.valueOf(carattere2));
 			return caratteriStringa1.size()>0?false:true;
 		}
 		return false;
 	}
+
+	/**Metodo che riconosce una vocale 
+	 * @param carattere char - carattere da esaminare
+	 * @return boolean True se è una vocale False altrimenti */
+	private static boolean isVocale(char carattere) {
+		switch (carattere) {
+			case 'a':
+			case 'A':
+			case 'e':
+			case 'E':
+			case 'i':
+			case 'I':
+			case 'o':
+			case 'O':
+			case 'u':
+			case 'U':
+				return true;
+			default: 
+				return false;
+		}
+	}
+
+	/** Metodo che rimuove le vocali in una frase
+	 * @param stringa String - stringa da modificare
+	 * @return String - stringa modificata */
+	static public String rimuoviVocali(String stringa) {
+		ArrayList<Character> caratteri = new ArrayList<Character>();
+		for (int i=0;i<stringa.length();i++)if (!Esercizi.isVocale(stringa.charAt(i))) caratteri.add(stringa.charAt(i));
+		return caratteri.toString().replace("[","").replace("]","").replace(", ","");
+	}
+
+
 	
 
  }
