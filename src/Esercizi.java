@@ -65,7 +65,7 @@ public class Esercizi {
 	* @param stringa String - Stringa da validare
 	* @return boolean ritorna vero se la stringa ricevuta rappresenta un indirizzo email formalmente corretto */
 	static public boolean isValidEmailRegex (String stringa) {
-		return stringa.matches("[\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}\\~]([\\.\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}~]?[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^_`\\{\\|\\}~]+)*@[\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}\\~]([\\.\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}~]?[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^_`\\{\\|\\}~]+)*.(com|it|edu|gov|fr|de|net)");
+		return stringa.matches("([\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~]+\\.?)*[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^\\`\\{\\|\\}\\~]+@([\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~]+\\.?)*[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^\\`\\{\\|\\}\\~]+\\.(com|it|edu|gov|fr|de|net)");
 	}
 
 	/**Metodo che preso in input un intero restituisce la somma delle sue cifre 
