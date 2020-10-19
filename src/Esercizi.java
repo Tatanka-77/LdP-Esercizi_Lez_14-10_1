@@ -137,7 +137,7 @@ public class Esercizi {
 	public static String inizialeMaiuscolo (String stringa) {
 		StringBuilder stringasb = new StringBuilder();
 		String[] parole=stringa.split(" ");
-		for (String parola : parole) stringasb.append(parola.substring(0,1).toUpperCase() + parola.substring(1)+" ");
+		for (String parola : parole) stringasb.append(parola.substring(0,1).toUpperCase()).append(parola.substring(1)).append(" ");
 		return stringasb.toString().trim();
 	}	
 	
