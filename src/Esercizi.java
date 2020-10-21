@@ -183,7 +183,7 @@ public class Esercizi {
 	}
 
 	/**Metodo che preso in input un array di interi lo stampa nel formato [n1, n2, ..., nk] 
-	 * @param vet_int int[] Array di interi */
+	 * @param numeri int[] Array di interi */
 	public static void stampaArray(int... numeri) {
 		System.out.print("["+numeri[0]);
 		for (int i = 1; i < numeri.length; i++) System.out.print(", " + numeri[i]);
