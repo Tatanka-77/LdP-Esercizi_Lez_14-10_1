@@ -65,7 +65,7 @@ public class Esercizi {
 	* @param stringa String - Stringa da validare
 	* @return boolean ritorna vero se la stringa ricevuta rappresenta un indirizzo email formalmente corretto */
 	static public boolean isValidEmailRegex (String stringa) {
-		return stringa.matches("[\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}\\~]([\\.\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}~]?[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^_`\\{\\|\\}~]+)*@[\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}\\~]([\\.\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^_\\`\\{\\|\\}~]?[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^_`\\{\\|\\}~]+)*.(com|it|edu|gov|fr|de|net)");
+		return stringa.matches("([\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~]+\\.?)*[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^\\`\\{\\|\\}\\~]+@([\\w\\!#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~]+\\.?)*[\\w!#$\\%\\&\\'\\*\\+\\-\\/\\=?\\^\\`\\{\\|\\}\\~]+\\.(com|it|edu|gov|fr|de|net)");
 	}
 
 	/**Metodo che preso in input un intero restituisce la somma delle sue cifre 
@@ -137,7 +137,7 @@ public class Esercizi {
 	public static String inizialeMaiuscolo (String stringa) {
 		StringBuilder stringasb = new StringBuilder();
 		String[] parole=stringa.split(" ");
-		for (String parola : parole) stringasb.append(parola.substring(0,1).toUpperCase() + parola.substring(1)+" ");
+		for (String parola : parole) stringasb.append(parola.substring(0,1).toUpperCase()).append(parola.substring(1)).append(" ");
 		return stringasb.toString().trim();
 	}	
 	
