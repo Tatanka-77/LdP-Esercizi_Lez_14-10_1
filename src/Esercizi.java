@@ -149,6 +149,7 @@ public class Esercizi {
 		if (pdf.size() > 0 && pdf.get(n-1).length() > 0) return pdf.get(n-1);
 		else {
 			StringBuilder sb = new StringBuilder();
+
 			switch (n) {
 				case 1: 
 					pdf.add("B");
@@ -180,4 +181,14 @@ public class Esercizi {
 		for (int i=0; i<n; i++) parola.append(Character.toString(alfabeto[(int)(Math.random()*n)]));
 		return(parola.toString());
 	}
+
+	/**Metodo che preso in input un array di interi lo stampa nel formato [n1, n2, ..., nk] 
+	 * @param vet_int int[] Array di interi */
+	public static void stampaArray(int... numeri) {
+		System.out.print("["+numeri[0]);
+		for (int i = 1; i < numeri.length; i++) System.out.print(", " + numeri[i]);
+		System.out.println("]");
+	}	
+		
+		
 }
